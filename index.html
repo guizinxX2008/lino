@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesouro Perdido no Egito</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #fff9e6;
+            margin: 0;
+            padding: 20px;
+        }
+        .step {
+            background-color: #ffffff;
+            border: 2px solid #f57f17;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            display: inline-block;
+            width: 300px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        }
+        .step h2 {
+            color: #f57f17;
+        }
+        .step button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #f57f17;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .step button:hover {
+            background-color: #c43e00;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Jornada ao Tesouro Perdido no Egito</h1>
+
+    <div id="step1" class="step">
+        <h2>Passo 1: Início da Jornada</h2>
+        <p>Você está em Cairo, no Egito. Você encontrou um antigo pergaminho com uma pista sobre o tesouro perdido.</p>
+        <button onclick="nextStep('step2')">Examinar o Pergaminho</button>
+    </div>
+
+    <div id="step2" class="step" style="display:none;">
+        <h2>Passo 2: Escolha da Rota</h2>
+        <p>O pergaminho indica dois caminhos: um através do deserto e outro pelas catacumbas.</p>
+        <button onclick="nextStep('step3a')">Ir pelo Deserto</button>
+        <button onclick="nextStep('step3b')">Explorar as Catacumbas</button>
+    </div>
+
+    <div id="step3a" class="step" style="display:none;">
+        <h2>Passo 3: Desafios do Deserto</h2>
+        <p>Você entrou no deserto e encontrou um antigo acampamento. Os habitantes oferecem duas opções: uma rota segura ou um atalho arriscado.</p>
+        <button onclick="nextStep('step4a')">Seguir a Rota Segura</button>
+        <button onclick="nextStep('step4b')">Tomar o Atalho Arriscado</button>
+    </div>
+
+    <div id="step3b" class="step" style="display:none;">
+        <h2>Passo 3: Catacumbas</h2>
+        <p>Você optou pelas catacumbas e encontrou uma entrada para uma tumba. Dentro, você se depara com duas opções: um corredor estreito ou uma passagem secreta.</p>
+        <button onclick="nextStep('step4c')">Explorar o Corredor Estreito</button>
+        <button onclick="nextStep('step4d')">Entrar na Passagem Secreta</button>
+    </div>
+
+    <div id="step4a" class="step" style="display:none;">
+        <h2>Passo 4: Rota Segura</h2>
+        <p>A rota segura leva você a uma antiga pirâmide. Dentro da pirâmide, você encontra dois caminhos: um para o salão principal e outro para uma câmara oculta.</p>
+        <button onclick="nextStep('step5a')">Entrar no Salão Principal</button>
+        <button onclick="nextStep('step5b')">Explorar a Câmara Oculta</button>
+    </div>
+
+    <div id="step4b" class="step" style="display:none;">
+        <h2>Passo 4: Atalho Arriscado</h2>
+        <p>O atalho arriscado leva você a uma oásis escondido. Você encontra um antigo mapa com uma pista para o tesouro.</p>
+        <button onclick="nextStep('step5c')">Seguir o Mapa</button>
+    </div>
+
+    <div id="step4c" class="step" style="display:none;">
+        <h2>Passo 4: Corredor Estreito</h2>
+        <p>O corredor estreito leva a uma sala com um enigma. Resolver o enigma revela a localização do tesouro.</p>
+        <button onclick="nextStep('step5d')">Resolver o Enigma</button>
+    </div>
+
+    <div id="step4d" class="step" style="display:none;">
+        <h2>Passo 4: Passagem Secreta</h2>
+        <p>A passagem secreta leva você a uma sala cheia de hieróglifos antigos. Você deve decifrar os hieróglifos para avançar.</p>
+        <button onclick="nextStep('step5e')">Decifrar Hieróglifos</button>
+    </div>
+
+    <div id="step5a" class="step" style="display:none;">
+        <h2>Passo 5: Salão Principal</h2>
+        <p>No salão principal, você encontra três sarcófagos: um dourado, um prateado e um de bronze.</p>
+        <button onclick="nextStep('step6a')">Abrir o Sarcófago Dourado</button>
+        <button onclick="nextStep('step6b')">Abrir o Sarcófago Prateado</button>
+        <button onclick="nextStep('step6c')">Abrir o Sarcófago de Bronze</button>
+    </div>
+
+    <div id="step5b" class="step" style="display:none;">
+        <h2>Passo 5: Câmara Oculta</h2>
+        <p>Na câmara oculta, você encontra uma caixa antiga com um enigma que revela uma pista final.</p>
+        <button onclick="nextStep('step6d')">Resolver o Enigma</button>
+    </div>
+
+    <div id="step5c" class="step" style="display:none;">
+        <h2>Passo 5: Mapa do Oásis</h2>
+        <p>Seguindo o mapa, você encontra uma entrada secreta para uma antiga tumba.</p>
+        <button onclick="nextStep('step6e')">Entrar na Tumba</button>
+    </div>
+
+    <div id="step5d" class="step" style="display:none;">
+        <h2>Passo 5: Enigma do Corredor</h2>
+        <p>Resolver o enigma revela a localização de uma entrada secreta para o tesouro.</p>
+        <button onclick="nextStep('step6f')">Seguir a Entrada Secreta</button>
+    </div>
+
+    <div id="step5e" class="step" style="display:none;">
+        <h2>Passo 5: Hieróglifos</h2>
+        <p>Decifrar os hieróglifos revela um mapa para uma tumba escondida.</p>
+        <button onclick="nextStep('step6g')">Seguir o Mapa</button>
+    </div>
+
+    <div id="step6a" class="step" style="display:none;">
+        <h2>Passo 6: Sarcófago Dourado</h2>
+        <p>O sarcófago dourado leva a uma sala cheia de ouro, mas o verdadeiro tesouro está escondido atrás de uma parede secreta.</p>
+        <button onclick="nextStep('step7')">Encontrar o Tesouro</button>
+    </div>
+
+    <div id="step6b" class="step" style="display:none;">
+        <h2>Passo 6: Sarcófago Prateado</h2>
+        <p>O sarcófago prateado contém um enigma que, se resolvido, revela o caminho para o tesouro.</p>
+        <button onclick="nextStep('step7')">Resolver o Enigma</button>
+    </div>
+
+    <div id="step6c" class="step" style="display:none;">
+        <h2>Passo 6: Sarcófago de Bronze</h2>
+        <p>O sarcófago de bronze contém um mapa que leva ao verdadeiro tesouro.</p>
+        <button onclick="nextStep('step7')">Seguir o Mapa</button>
+    </div>
+
+    <div id="step6d" class="step" style="display:none;">
+        <h2>Passo 6: Resolver Enigma da Caixa</h2>
+        <p>Resolver o enigma
